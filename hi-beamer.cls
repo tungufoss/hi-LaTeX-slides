@@ -3,9 +3,9 @@
 \LoadClass[compress]{beamer}
 
 \RequirePackage{amsmath,amssymb,latexsym,graphics}
-\RequirePackage[icelandic,english]{babel}
+\RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{t1enc}
+\RequirePackage[icelandic,english]{babel}
 \RequirePackage{etoolbox}
 \RequirePackage{tcolorbox}
 \RequirePackage{pictex}
@@ -37,6 +37,8 @@
 \setbeamercolor{block body example}{bg=orange!50!white,fg=black}
 
 \setbeamercolor{itemize item}{fg=blue}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%
 %%%%% VARIABLES %%%%%
@@ -87,10 +89,11 @@
 \title{\TITLE}
 \date{\DATE}
 
+\newcommand{\hibeamerdir}{HI-LaTeX}
 \newcommand{\hilogo}{
     \iftoggle{ICELANDIC}
-    {hi-latex/hi-is}
-    {hi-latex/hi-en}
+    {\hibeamerdir/hi-is}
+    {\hibeamerdir/hi-en}
 }
 
 
@@ -167,9 +170,9 @@
 % Define initial background based on the WIDE toggle
 \AtBeginDocument{%
     \iftoggle{WIDE}{
-        \usebackgroundtemplate{\includegraphics[width=\paperwidth]{hi-latex/front169.png}}
+        \usebackgroundtemplate{\includegraphics[width=\paperwidth]{\hibeamerdir/front169.png}}
     }{
-        \usebackgroundtemplate{\includegraphics[width=\paperwidth]{hi-latex/front43.png}}
+        \usebackgroundtemplate{\includegraphics[width=\paperwidth]{\hibeamerdir/front43.png}}
     }
     \begin{frame}
     \titlepage
